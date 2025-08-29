@@ -1,4 +1,5 @@
 import 'package:commers_20250828/screen/main/main_screen.dart';
+import 'package:commers_20250828/utill/custom_scroll_behavior.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
 
       ),
       home: MainScreen(),
+      scrollBehavior: CustomScrollBehavior(),
 
 
     );

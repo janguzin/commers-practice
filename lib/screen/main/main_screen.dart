@@ -1,3 +1,4 @@
+import 'package:commers_20250828/screen/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,12 +15,22 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    String appBarTitle = "";
+    if(currentIndex == 0) {
+      appBarTitle = "Commerce";
+    } else if(currentIndex == 1) {
+      appBarTitle = "Category";
+    } else {
+      appBarTitle = "Cart";
+    }
+
     return Scaffold(
-      appBar: AppBar(title: Text('재경이네', style: TextStyle(color: Colors.black),),),
+      appBar: AppBar(title: Text(appBarTitle, style: TextStyle(color: Colors.black),),),
       body: IndexedStack(
         index: currentIndex,
         children: [
-          Container(color: Colors.red,),
+          HomeScreen(),
           Container(color: Colors.blue,),
           Container(color: Colors.yellow,),
         ],
